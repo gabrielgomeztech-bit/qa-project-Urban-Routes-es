@@ -6,6 +6,4 @@ __pycache__/
 __init__.py
 .idea
 main.py
-pages/__init__.py
-data/__init__.py
-info/__init__.py
+
