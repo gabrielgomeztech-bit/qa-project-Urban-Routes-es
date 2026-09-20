@@ -1,0 +1,104 @@
+# Urban Routes – Automated Testing
+
+##  Descripción del proyecto
+
+Este proyecto contiene una suite de **pruebas automatizadas para la aplicación web Urban Routes**, desarrollada utilizando **Python, Selenium WebDriver, Pytest y PyCharm**.
+
+El objetivo principal de la automatización es realizar **pruebas de regresión** sobre el flujo de solicitud de un taxi, verificando que las funcionalidades principales de la aplicación continúen funcionando correctamente después de realizar cambios o actualizaciones en la aplicación web.
+
+La suite automatiza el proceso completo de solicitud de un taxi, desde la configuración de la ruta hasta la asignación de un conductor.
+
+---
+
+##  Objetivo de las pruebas
+
+Las pruebas verifican diferentes funcionalidades del flujo de pedido de Urban Routes:
+
+* Configuración de la dirección de origen y destino.
+* Selección de la tarifa **Comfort**.
+* Registro y confirmación del número telefónico.
+* Agregación de una tarjeta de crédito.
+* Ingreso de un mensaje para el conductor.
+* Solicitud de manta y pañuelos.
+* Selección de la cantidad de helados.
+* Inicio de la búsqueda de un automóvil.
+* Verificación de la información mostrada después de la asignación de un conductor.
+
+Estas pruebas permiten detectar rápidamente posibles regresiones cuando se realizan modificaciones en la aplicación.
+
+---
+
+##  Resumen de automatización
+
+| Elemento                    |                Cantidad |
+| --------------------------- | ----------------------: |
+| **Pruebas automatizadas**   |                   **9** |
+| **Selectores Selenium**     |                  **25** |
+| Python packages principales |                   **4** |
+| Página automatizada         |            Urban Routes |
+| Framework de pruebas        |                  Pytest |
+| Automatización web          |      Selenium WebDriver |
+| Navegador                   |           Google Chrome |
+| Patrón utilizado            | Page Object Model (POM) |
+| IDE                         |                 PyCharm |
+
+---
+
+##  Pruebas automatizadas
+
+La suite contiene **9 pruebas automatizadas**:
+
+| # | Prueba                         | Validación                                                                      |
+| - | ------------------------------ | ------------------------------------------------------------------------------- |
+| 1 | `test_1_set_route`             | Verifica que las direcciones de origen y destino sean ingresadas correctamente. |
+| 2 | `test_2_select_comfort_tariff` | Verifica la selección de la tarifa **Comfort**.                                 |
+| 3 | `test_3_phone_number`          | Verifica el ingreso y confirmación del número telefónico.                       |
+| 4 | `test_4_add_creditcard`        | Verifica que una tarjeta de crédito pueda ser agregada correctamente.           |
+| 5 | `test_5_message_driver`        | Verifica el mensaje ingresado para el conductor.                                |
+| 6 | `test_6_blanket_and_napkin`    | Verifica la selección de **Manta y pañuelos**.                                  |
+| 7 | `test_7_order_2_icecream`      | Verifica la selección de **2 helados**.                                         |
+| 8 | `test_8_taxi_order_window`     | Verifica que se muestre la ventana **"Buscar automóvil"** al solicitar el taxi. |
+| 9 | `test_9_taxi_driver_assign`    | Verifica la información disponible después de la asignación de un conductor.    |
+
+###  Validaciones de la asignación del conductor
+
+La prueba `test_9_taxi_driver_assign` comprueba que estén disponibles los siguientes elementos:
+
+* Número de orden.
+* ETA o tiempo estimado de llegada.
+* Botón **Cancelar**.
+* Botón **Detalles**.
+* Información del conductor.
+
+Además, se utiliza una espera explícita de hasta **120 segundos** para permitir que la aplicación complete el proceso de búsqueda y asignación del conductor.
+
+---
+
+##  Selectores Selenium
+
+El Page Object `UrbanRoutesPage` contiene **25 selectores Selenium**, utilizados para interactuar con los diferentes elementos de la aplicación y realizar las validaciones correspondientes.
+
+Los selectores incluyen elementos para:
+
+* Ruta.
+* Solicitud de taxi.
+* Tarifa Comfort.
+* Número telefónico.
+* Código de confirmación.
+* Tarjeta de crédito.
+* Método de pago.
+* Mensaje para el conductor.
+* Manta y pañuelos.
+* Helados.
+* Solicitud del taxi.
+* Búsqueda y asignación del conductor.
+
+Los selectores utilizan diferentes estrategias de Selenium, incluyendo:
+
+* `By.ID`
+* `By.CSS_SELECTOR`
+* `By.XPATH`
+
+El uso de estos selectores se centraliza en `urban_routes_page.py`, siguiendo el patrón **Page Object Model**, lo que facilita el mantenimiento de la automatización cuando la interfaz de usuario cambia.
+
+
